@@ -10,7 +10,11 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
 # Find the QtWidgets library
+set (CMAKE_PREFIX_PATH "/usr/local/Cellar/qt/5.12.-1")
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+# Find GPhoto2
+set(CMAKE_MODULE_PATH "~/cmake")
 find_package(GPhoto2 REQUIRED MODULE)
 
 # Populate a CMake variable with the sources

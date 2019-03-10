@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <vector>
 
 class QStringListModel;
 
@@ -13,16 +14,16 @@ class MainWindow : public QMainWindow
 {
   Q_OBJECT
   
- public:
+public:
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
 
-  public slots:
-    void enumerateCameras();
+public slots:
+  void enumerateCameras();
       
- private:
-    QStringListModel *model;
-    Ui::MainWindow *ui;
+private:
+  QStringListModel *model;
+  Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H

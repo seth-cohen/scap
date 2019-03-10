@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 
 #include <iostream>
+#include <sstream>
+
 #include <QStringListModel>
 #include <gphoto2/gphoto2-camera.h>
 
@@ -25,5 +27,18 @@ void MainWindow::enumerateCameras() {
   context = gp_context_new();
 
   int count = gp_camera_autodetect(list, context);
+  const char *name, *value;
+  
+  for (int i = 0; i < count; i++) {
+    gp_list_get_name(list, i, &name);
+    gp_list_get_value(list, i, &value);
+
+    std::stringstream a;
+    a << name << ": " << value;
+    
+    ui->listWidget->addItem(a.str().c_str());
+  }
+    
+  
   std::cout << "Number of Cameras Detected: " << count << std::endl;
 }
