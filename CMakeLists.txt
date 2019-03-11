@@ -22,6 +22,7 @@ set(SOURCES
   mainwindow.ui
   mainwindow.cpp
   main.cpp
+  camera_container.cpp
   )
 
 # Tell CMake to create the helloworld executable
